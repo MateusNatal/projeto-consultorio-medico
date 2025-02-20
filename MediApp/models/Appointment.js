@@ -12,7 +12,7 @@ const appointmentSchema = new Schema({
     required: [true, "DoctorId is required."],
   },
   pacientId: {
-    type: Date,
+    type: String,
     required: [true, "PacientId is required."],
   },
   createdAt: {
@@ -22,4 +22,5 @@ const appointmentSchema = new Schema({
 });
 
 const appointment = mongoose.model("Appointment", appointmentSchema);
+
 export default appointment;

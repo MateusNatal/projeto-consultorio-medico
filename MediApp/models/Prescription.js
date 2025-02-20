@@ -1,12 +1,11 @@
 import { mongoose } from "mongoose";
-import appointment from "./Appointment.js";
 
 const Schema = mongoose.Schema;
 
 const prescriptionSchema = new Schema({
   date: {
     type: Date,
-    required: [true, "Date of prescription is required."],
+    required: [true, "Date OF Prescription is required."],
   },
   appointmentId: {
     type: String,
@@ -29,5 +28,6 @@ const prescriptionSchema = new Schema({
   },
 });
 
-const prescription = mongoose.model("prescription", prescriptionSchema);
+const prescription = mongoose.model("Prescription", prescriptionSchema);
+
 export default prescription;

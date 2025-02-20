@@ -3,17 +3,13 @@ import { mongoose } from "mongoose";
 const Schema = mongoose.Schema;
 
 const pacientSchema = new Schema({
-  // pacientId: {
-  //   type: String,
-  //   required: [true, "pacient ID is required."],
-  // },
   name: {
     type: String,
-    required: [true, "pacient name is required."],
+    required: [true, "Pacient name is required."],
   },
   birthDate: {
     type: Date,
-    required: [true, "Birth date name is required."],
+    required: [true, "Birth Date is required."],
   },
   email: {
     type: String,
@@ -21,7 +17,7 @@ const pacientSchema = new Schema({
   },
   phone: {
     type: String,
-    required: [true, "Phone number name is required."],
+    required: [true, "Phone number is required."],
   },
   createdAt: {
     type: Date,
@@ -29,5 +25,6 @@ const pacientSchema = new Schema({
   },
 });
 
-const pacient = mongoose.model("pacient", pacientSchema);
+const pacient = mongoose.model("Pacient", pacientSchema);
+
 export default pacient;
