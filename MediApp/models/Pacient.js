@@ -9,7 +9,6 @@ const pacientSchema = new Schema({
   },
   birthDate: {
     type: Date,
-    required: [true, "Birth Date is required."],
   },
   email: {
     type: String,
