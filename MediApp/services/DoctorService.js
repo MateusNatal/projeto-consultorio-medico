@@ -1,3 +1,4 @@
+import doctorRepository from "../repositories/DoctorRepository.js";
 import DoctorRepository from "../repositories/DoctorRepository.js";
 
 const getAllDoctors = async () => {
@@ -47,12 +48,18 @@ const deleteDoctor = async (id) => {
   return await DoctorRepository.deleteDoctor(id);
 };
 
+//login
+const getDoctorByLogin = async (login) => {
+  return await doctorRepository.getDoctorByLogin(login);
+};
+
 const doctorService = {
   getAllDoctors,
   getDoctor,
   saveDoctor,
   updateDoctor,
   deleteDoctor,
+  getDoctorByLogin,
 };
 
 export default doctorService;
