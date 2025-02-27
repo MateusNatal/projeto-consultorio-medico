@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 2px;
+}
+
+.form-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: #3b82f6; /* Azul */
+  justify-content: center; /* Centraliza horizontalmente */
+  margin: 5px auto; /* Garante que o botão fique centralizado dentro do container */
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #e5e7eb; /* Cinza */
+  border-radius: 0.25rem; /* Arredondado */
+  margin-bottom: 1rem;
+}
+
+.back-button {
+  width: 6rem; /* 96px */
+  padding: 0.5rem;
+  text-align: center;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 0.25rem;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+}
+
+.submit-button {
+  width: 6rem; /* 96px */
+  padding: 0.5rem;
+  text-align: center;
+  background-color: #10b981; /* Verde */
+  color: white;
+  border-radius: 0.25rem;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  margin: 5px auto; /* Garante que o botão fique centralizado dentro do container */
+}
+
+.home-button__put {
+  width: 200px;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: #10b981;
+  color: white;
+  border-radius: 0.25rem;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  display: block; /* Torna o botão um elemento de bloco */
+  margin: 1px auto; /* Centraliza o botão horizontalmente */
+}
+
+.home-button__get {
+  width: 200px;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: #029765;
+  color: white;
+  border-radius: 0.25rem;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  display: block; /* Torna o botão um elemento de bloco */
+  margin: 1px auto; /* Centraliza o botão horizontalmente */
+}
+
+.form-button:hover {
+  background-color: #16a34a; /* Verde escuro */
+}
+
+.error-message {
+  padding: 0.5rem;
+  background-color: #f87171; /* Vermelho */
+  color: white;
+  border-radius: 0.25rem;
+  border: 1px solid #e5e7eb;
+}
