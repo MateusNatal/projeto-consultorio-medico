@@ -3,10 +3,19 @@ import React, { useEffect, useState } from "react"; // HOOK = gancho
 import Link from "next/link";
 
 export default function DoctorList() {
-  const [doctors, setDoctors] = useState(new Array());
+  const [doctors, setDoctors] = useState<any[]>([]); // Tipando como array de qualquer coisa
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    const token = sessionStorage.getItem("token");
+
+    if (!token) {
+      setError(
+        "Você precisa estar autenticado para visualizar a lista de médicos."
+      );
+      return;
+    }
+
     fetch("http://127.0.0.1:3001/doctors", {
       method: "GET",
       headers: {
@@ -14,85 +23,89 @@ export default function DoctorList() {
         Authorization: sessionStorage.getItem("token") || "",
       },
     })
-      .then((response) => response.json())
-      .then((data) => setDoctors(data));
-  }, [doctors]);
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Falha na autenticação. Erro 401.");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setDoctors(data); // Agora sabemos que data é um array
+        } else {
+          setError("Erro: resposta da API não é um array.");
+        }
+      })
+      .catch((error) => {
+        setError(error.message); // Trata o erro de forma adequada
+      });
+  }, []); // A dependência foi corrigida para o array vazio, rodando uma vez na montagem
 
   const deleteDoctor = async (id: any) => {
-    const add = await fetch(`http://127.0.0.1:3001/doctors/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: sessionStorage.getItem("token") || "",
-      },
-    });
-    const content = await add.json();
-    console.log(content);
-    if (content.login) {
-      window.location.reload();
-    } else {
-      setError(content.error);
+    const token = sessionStorage.getItem("token");
+
+    if (!token) {
+      setError("Você precisa estar autenticado para excluir um médico.");
+      return;
+    }
+
+    try {
+      const response = await fetch(`http://127.0.0.1:3001/doctors/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: sessionStorage.getItem("token") || "",
+        },
+      });
+
+      const content = await response.json();
+
+      if (content.login) {
+        window.location.reload();
+      } else {
+        setError(content.error || "Erro desconhecido ao excluir o médico.");
+      }
+    } catch (err) {
+      setError("Erro na requisição para excluir o médico.");
     }
   };
 
   return (
     <>
-      <Link
-        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-        href="/home"
-      >
-        Voltar
+      <Link href="/home">
+        <button className="back-button">Back</button>
       </Link>
-      <table>
+      <table className="table">
         <thead>
-          <tr>
-            <td className="border border-slate-300">Nome</td>
-            <td className="border border-slate-300 text-center">Login</td>
-            <td className="border border-slate-300 text-center">
-              Especialidade Médica
-            </td>
-            <td className="border border-slate-300 text-center">
-              Registro Médico
-            </td>
-            <td className="border border-slate-300 text-center">Email</td>
-            <td className="border border-slate-300 text-center">Telefone</td>
+          <tr className="thead tr">
+            <td className="td">Name</td>
+            <td className="td">Login</td>
+            <td className="td">Medical Specialty</td>
+            <td className="td">Medical Record</td>
+            <td className="td">Email</td>
+            <td className="td">Phone number</td>
           </tr>
         </thead>
 
         <tbody className="doctors" id="doctors">
           {!!doctors &&
             doctors.map((doctor: any) => (
-              <tr>
-                <td className="border border-slate-300">{doctor.name}</td>
-                <td className="border border-slate-300 text-center">
-                  {doctor.login}
-                </td>
-                <td className="border border-slate-300 text-center">
-                  {doctor.medicalSpecialty}
-                </td>
-                <td className="border border-slate-300 text-center">
-                  {doctor.medicalRegistration}
-                </td>
-                <td className="border border-slate-300 text-center">
-                  {doctor.email}
-                </td>
-                <td className="border border-slate-300 text-center">
-                  {doctor.phone}
-                </td>
-                <td className="border border-slate-300 text-center">
+              <tr key={doctor._id}>
+                <td className="td">{doctor.name}</td>
+                <td className="td">{doctor.login}</td>
+                <td className="td">{doctor.medicalSpecialty}</td>
+                <td className="td">{doctor.medicalRegistration}</td>
+                <td className="td">{doctor.email}</td>
+                <td className="td">{doctor.phone}</td>
+                <td className="">
                   <button
                     onClick={(e) => deleteDoctor(doctor._id)}
-                    className="bg-red-500 p-2 inline-block text-white text-sm"
+                    className="delete-button"
                   >
                     Delete
                   </button>
-                </td>
-                <td className="border border-slate-300 text-center">
-                  <Link
-                    href={`/doctor/edit/${doctor._id}`}
-                    className="bg-yellow-500 p-2 inline-block ml-3 text-white text-sm"
-                  >
-                    Edit
+                  <Link href={`/doctor/edit/${doctor._id}`}>
+                    <button className="edit-button__list">Edit</button>
                   </Link>
                 </td>
               </tr>
@@ -101,10 +114,7 @@ export default function DoctorList() {
       </table>
       <div>
         {error && (
-          <div
-            className="p-2 text-white border-gray-200 border-[1px] rounded-sm bg-red-400"
-            style={{ color: "red" }}
-          >
+          <div className="error-message" style={{ color: "red" }}>
             {error}
           </div>
         )}

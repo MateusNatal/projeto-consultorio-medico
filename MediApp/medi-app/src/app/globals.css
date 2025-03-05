@@ -4,6 +4,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+a {
+  text-decoration: none; /* Remove o sublinhado de todos os links */
+}
+
 .form-container {
   width: 100%;
   max-width: 640px;
@@ -21,6 +25,14 @@ body {
   margin: 5px auto; /* Garante que o botão fique centralizado dentro do container */
 }
 
+.form-text {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000000;
+  justify-content: center; /* Centraliza horizontalmente */
+  margin: 5px auto; /* Garante que o botão fique centralizado dentro do container */
+}
 .form-input {
   width: 100%;
   padding: 0.6rem;
@@ -29,8 +41,82 @@ body {
   margin-bottom: 1rem;
 }
 
+.header {
+  width: 100%;
+  background-color: #e2e8f0; /* bg-gray-300 */
+  padding: 1rem; /* py-4 px-3 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-title {
+  font-size: 1.875rem; /* text-2xl */
+  font-weight: 800; /* font-extrabold */
+  color: #1f2937; /* text-gray-900 */
+  text-decoration: none;
+}
+
+.header-title a {
+  color: inherit; /* Mantém a cor do texto */
+  text-decoration: none; /* Remove o sublinhado do link */
+}
+
+.header-title a:hover {
+  color: #2563eb; /* Azul para hover */
+}
+
+.error-message {
+  padding: 0.5rem;
+  background-color: #f87171; /* Vermelho */
+  color: white;
+  border-radius: 0.25rem;
+  border: 1px solid #e5e7eb;
+}
+
+.topic-box {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+}
+
+/* Estilização da tabela */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  margin-top: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+thead tr {
+  background-color: #007bff;
+  color: white;
+}
+td,
+th {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #dee2e6;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f8f8f8;
+}
+
+/* Linhas pares */
+tbody tr:nth-child(even) {
+  background-color: #eff7fd;
+}
+/* Estilização dos botões */
+
 .back-button {
-  width: 6rem; /* 96px */
+  width: 96px; /* 96px */
   padding: 0.5rem;
   text-align: center;
   background-color: #3b82f6;
@@ -41,10 +127,10 @@ body {
 }
 
 .submit-button {
-  width: 6rem; /* 96px */
+  width: 96px; /*  */
   padding: 0.5rem;
   text-align: center;
-  background-color: #10b981; /* Verde */
+  background-color: #10b981;
   color: white;
   border-radius: 0.25rem;
   border: 1px solid #e5e7eb;
@@ -52,6 +138,28 @@ body {
   display: flex;
   justify-content: center; /* Centraliza horizontalmente */
   margin: 5px auto; /* Garante que o botão fique centralizado dentro do container */
+}
+
+.delete-button {
+  width: 96px;
+  padding: 10px;
+  text-align: center;
+  background-color: #d41010;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  margin-right: 8px;
+}
+.edit-button__list {
+  width: 96px;
+  padding: 10px;
+  text-align: center;
+  background-color: #ffd900;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
 }
 
 .home-button__put {
@@ -80,14 +188,19 @@ body {
   margin: 1px auto; /* Centraliza o botão horizontalmente */
 }
 
-.form-button:hover {
-  background-color: #16a34a; /* Verde escuro */
-}
-
-.error-message {
+.upload-button {
+  width: 90%;
   padding: 0.5rem;
-  background-color: #f87171; /* Vermelho */
+  text-align: center;
+  background-color: #10b981;
   color: white;
   border-radius: 0.25rem;
   border: 1px solid #e5e7eb;
+  cursor: pointer;
+  display: block;
+  margin: 10px auto;
+}
+
+.form-button:hover {
+  background-color: #16a34a; /* Verde escuro */
 }

@@ -2,13 +2,13 @@
 import React from "react";
 import Link from "next/link";
 
-export default function PacientCreate() {
+export default function DoctorEdit() {
   return (
     <>
       <Link href="/home">
         <button className="back-button">Back</button>
       </Link>
-      <h1> Create Pacient Page </h1>
+      <h1> Edit Doctor Page </h1>
     </>
   );
 }

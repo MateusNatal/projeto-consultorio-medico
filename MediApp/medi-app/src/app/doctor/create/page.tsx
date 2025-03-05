@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import "../../globals.css";
 
 export default function DoctorCreate() {
   const router = useRouter();
@@ -61,12 +60,12 @@ export default function DoctorCreate() {
   return (
     <>
       <Link href="/home">
-        <button className="back-button">Voltar</button>
+        <button className="back-button">Back</button>
       </Link>
       <form className="form-container" onSubmit={addDoctor}>
-        <h1 className="form-header">FORMULÁRIO CRIAÇÃO DE MÉDICO</h1>
+        <h1 className="form-header">DOCTOR CREATION FORM</h1>
         <div>
-          <label htmlFor="">Nome</label>
+          <label>Name</label>
           <input
             type="text"
             name="name"
@@ -83,7 +82,7 @@ export default function DoctorCreate() {
           />
         </div>
         <div>
-          <label htmlFor="">Senha</label>
+          <label htmlFor="">Password</label>
           <input
             name="password"
             className="form-input"
@@ -91,22 +90,22 @@ export default function DoctorCreate() {
           />
         </div>
         <div>
-          <label htmlFor="">Especialidade Médica</label>
+          <label htmlFor="">Medical Specialty</label>
           <input
             name="medicalSpecialty"
             className="form-input"
             onChange={(e: any) => setMedicalSpecialty(e.target.value)}
           />
         </div>
-        <div className="w-full py-2">
-          <label htmlFor="">Registro Médico</label>
+        <div>
+          <label htmlFor="">Medical Record</label>
           <input
             name="medicalRegistration"
             className="form-input"
             onChange={(e: any) => setMedicalRegistration(e.target.value)}
           />
         </div>
-        <div className="w-full py-2">
+        <div>
           <label htmlFor="">Email</label>
           <input
             name="email"
@@ -114,16 +113,16 @@ export default function DoctorCreate() {
             onChange={(e: any) => setEmail(e.target.value)}
           />
         </div>
-        <div className="w-full py-2">
-          <label htmlFor="">Telefone</label>
+        <div>
+          <label htmlFor="">Phone number</label>
           <input
             name="phone"
             className="form-input"
             onChange={(e: any) => setPhone(e.target.value)}
           />
         </div>
-        <div className="w-full py-2">
-          <button className="submit-button">Criar</button>
+        <div>
+          <button className="submit-button">Submit</button>
         </div>
         <div>{error && <div className="error-message">{error}</div>}</div>
       </form>
