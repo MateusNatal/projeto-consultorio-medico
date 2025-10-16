@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
+import Link from "next/link";
 
 export default function FakeApi() {
   const [fakeApiData, setFakeApiData] = useState(null);
@@ -18,6 +19,9 @@ export default function FakeApi() {
 
   return (
     <>
+      <Link href="/home">
+        <button className="back-button">Back</button>
+      </Link>
       <h1 className="form-header">FAKE API DATA</h1>
       <button className="home-button__put" onClick={(e) => requestFakeApi()}>
         SEARCH DATA

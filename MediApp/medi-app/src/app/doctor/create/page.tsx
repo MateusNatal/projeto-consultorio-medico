@@ -74,7 +74,7 @@ export default function DoctorCreate() {
           />
         </div>
         <div>
-          <label htmlFor="">Login</label>
+          <label>Login</label>
           <input
             name="login"
             className="form-input"
@@ -82,7 +82,7 @@ export default function DoctorCreate() {
           />
         </div>
         <div>
-          <label htmlFor="">Password</label>
+          <label>Password</label>
           <input
             name="password"
             className="form-input"
@@ -90,7 +90,7 @@ export default function DoctorCreate() {
           />
         </div>
         <div>
-          <label htmlFor="">Medical Specialty</label>
+          <label>Medical Specialty</label>
           <input
             name="medicalSpecialty"
             className="form-input"
@@ -98,7 +98,7 @@ export default function DoctorCreate() {
           />
         </div>
         <div>
-          <label htmlFor="">Medical Record</label>
+          <label>Medical Record</label>
           <input
             name="medicalRegistration"
             className="form-input"
@@ -106,7 +106,7 @@ export default function DoctorCreate() {
           />
         </div>
         <div>
-          <label htmlFor="">Email</label>
+          <label>Email</label>
           <input
             name="email"
             className="form-input"
@@ -114,7 +114,7 @@ export default function DoctorCreate() {
           />
         </div>
         <div>
-          <label htmlFor="">Phone number</label>
+          <label>Phone number</label>
           <input
             name="phone"
             className="form-input"
