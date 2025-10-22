@@ -84,6 +84,7 @@ export default function DoctorList() {
             <td className="td">Medical Record</td>
             <td className="td">Email</td>
             <td className="td">Phone number</td>
+            <th className="action-column"></th>
           </tr>
         </thead>
 
@@ -100,12 +101,14 @@ export default function DoctorList() {
                 <td className="">
                   <button
                     onClick={(e) => deleteDoctor(doctor._id)}
-                    className="delete-button"
+                    className="action-button delete-button__list"
                   >
                     Delete
                   </button>
                   <Link href={`/doctor/edit/${doctor._id}`}>
-                    <button className="edit-button__list">Edit</button>
+                    <button className="action-button edit-button__list">
+                      Edit
+                    </button>
                   </Link>
                 </td>
               </tr>

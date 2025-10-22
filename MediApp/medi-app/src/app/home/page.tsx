@@ -5,6 +5,10 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
+      {" "}
+      <Link href="/">
+        <button className="logout-button">Logout</button>
+      </Link>
       <div className="form-container">
         <h1 className="form-header"> HOME </h1>
         <br></br>
@@ -50,7 +54,7 @@ export default function Home() {
         <div className="topic-box">
           <h1 className="form-text">Fake API</h1>
           <Link href="/fake-api">
-            <button className="home-button__put">Acess FakeAPI</button>
+            <button className="fakeapi-button__list">Acess FakeAPI</button>
           </Link>
         </div>
       </div>

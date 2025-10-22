@@ -99,9 +99,13 @@ export default function AppointmentList() {
       <table>
         <thead>
           <tr>
-            <td className="border border-slate-300">Date</td>
-            <td className="border border-slate-300 text-center">Doctor</td>
-            <td className="border border-slate-300 text-center">Pacient</td>
+            <td>Date</td>
+            <td>Doctor</td>
+            <td>Pacient</td>
+            <th className="action-column"></th>
+            <th className="action-column"></th>
+            <th className="action-column"></th>
+            <th className="action-column"></th>
           </tr>
         </thead>
 
@@ -119,7 +123,7 @@ export default function AppointmentList() {
                 <td>
                   <button
                     onClick={(e) => deleteAppointment(appointment._id)}
-                    className="delete-button"
+                    className="delete-button__list"
                   >
                     Delete
                   </button>
@@ -134,14 +138,17 @@ export default function AppointmentList() {
                 </td>
                 <td>
                   <Link
-                    className="submit-button"
                     href={`/prescription/${appointment._id}/create`}
+                    className="generate-button__list"
                   >
                     Create new prescription
                   </Link>
                 </td>
                 <td>
-                  <Link className="submit-button" href="/prescription/upload">
+                  <Link
+                    href="/prescription/upload"
+                    className="upload-button__list"
+                  >
                     Upload prescription
                   </Link>
                 </td>

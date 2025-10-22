@@ -110,6 +110,9 @@ export default function PrescriptionCreate() {
             <td className="">Medicine</td>
             <td className="">Dosage</td>
             <td className="">Instructions</td>
+            <th className="action-column"></th>
+            <th className="action-column"></th>
+            <th className="action-column"></th>
           </tr>
         </thead>
 
@@ -117,24 +120,25 @@ export default function PrescriptionCreate() {
           {!!prescriptions &&
             prescriptions.map((prescription: any, index) => (
               <tr key={prescription._id || prescription.id || index}>
-                <td className="">{prescription.date}</td>
-                <td className="">{prescription.medicine}</td>
-                <td className="">{prescription.dosage}</td>
-                <td className="">{prescription.instructions}</td>
+                <td>{prescription.date}</td>
+                <td>{prescription.medicine}</td>
+                <td>{prescription.dosage}</td>
+                <td>{prescription.instructions}</td>
 
                 {!prescription.file && (
-                  <td className="">
-                    {" "}
-                    <input
-                      className="upload-button"
-                      type="file"
-                      name="file"
-                      onChange={(e) => setFile(e.target.files?.[0])}
-                    />
+                  <td>
+                    <label className="file-input">
+                      {file ? file.name : "Choose file"}
+                      <input
+                        type="file"
+                        name="file"
+                        onChange={(e) => setFile(e.target.files?.[0])}
+                      />
+                    </label>
                   </td>
                 )}
                 {!prescription.file && (
-                  <td className="">
+                  <td>
                     <button
                       onClick={(e) => uploadPrescription(prescription._id)}
                       className="upload-button"
@@ -144,20 +148,20 @@ export default function PrescriptionCreate() {
                   </td>
                 )}
                 {!prescription.file && (
-                  <td className="">
+                  <td>
                     <button
                       onClick={(e) => generatePrescription(prescription._id)}
-                      className="upload-button"
+                      className="generate-button"
                     >
                       Generate Prescription
                     </button>
                   </td>
                 )}
                 {prescription.file && (
-                  <td className="">
+                  <td>
                     <button
                       onClick={(e) => showFile(prescription._id)}
-                      className="upload-button"
+                      className=".submit-button__list"
                     >
                       Show file
                     </button>

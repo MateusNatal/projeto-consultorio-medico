@@ -43,10 +43,12 @@ export default function PacientList() {
       <table>
         <thead>
           <tr>
-            <td className="border border-slate-300">Name</td>
-            <td className="border border-slate-300 text-center">Birth date</td>
-            <td className="border border-slate-300 text-center">Email</td>
-            <td className="border border-slate-300 text-center">Phone</td>
+            <td>Name</td>
+            <td>Birth date</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <th className="action-column"></th>
+            <th className="action-column"></th>
           </tr>
         </thead>
 
@@ -54,17 +56,12 @@ export default function PacientList() {
           {!!pacients &&
             pacients.map((pacient: any) => (
               <tr>
-                <td className="border border-slate-300">{pacient.name}</td>
-                <td className="border border-slate-300 text-center">
-                  {pacient.birthDate}
-                </td>
-                <td className="border border-slate-300 text-center">
-                  {pacient.email}
-                </td>
-                <td className="border border-slate-300 text-center">
-                  {pacient.phone}
-                </td>
-                <td className="border border-slate-300 text-center">
+                <td>{pacient.name}</td>
+                <td>{pacient.birthDate}</td>
+                <td>{pacient.email}</td>
+                <td>{pacient.phone}</td>
+
+                <td>
                   <button
                     onClick={(e) => deletePacient(pacient._id)}
                     className="delete-button__list"
@@ -72,7 +69,7 @@ export default function PacientList() {
                     Delete
                   </button>
                 </td>
-                <td className="border border-slate-300 text-center">
+                <td>
                   <Link
                     href={`/pacient/edit/${pacient._id}`}
                     className="edit-button__list"

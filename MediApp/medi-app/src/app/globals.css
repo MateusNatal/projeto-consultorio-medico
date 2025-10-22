@@ -1,13 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 
+/* === BASE === */
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-  text-decoration: none; /* Remove o sublinhado de todos os links */
+  text-decoration: none; /* Remove sublinhado */
+  color: inherit;
 }
 
+button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  display: block; /* Centraliza por padrão */
+  margin: 4px auto;
+}
+
+/* === CONTAINERS === */
 .form-container {
   width: 100%;
   max-width: 640px;
@@ -16,13 +36,43 @@ a {
   padding: 2px;
 }
 
+.topic-box {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08);
+  margin: 20px auto;
+}
+
+/* === CABEÇALHO === */
+.header {
+  width: 100%;
+  background-color: #e2e8f0;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-title {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: #1f2937;
+}
+
+.header-title a:hover {
+  color: #2563eb;
+}
+
+/* === FORM === */
 .form-header {
   text-align: center;
   font-weight: bold;
   font-size: 30px;
-  color: #3b82f6; /* Azul */
-  justify-content: center; /* Centraliza horizontalmente */
-  margin: 5px auto; /* Garante que o botão fique centralizado dentro do container */
+  color: #3b82f6;
+  margin: 10px auto;
 }
 
 .form-text {
@@ -30,202 +80,295 @@ a {
   font-weight: bold;
   font-size: 16px;
   color: #000000;
-  justify-content: center; /* Centraliza horizontalmente */
-  margin: 5px auto; /* Garante que o botão fique centralizado dentro do container */
+  margin: 5px auto;
 }
+
 .form-input {
   width: 100%;
   padding: 0.6rem;
-  border: 1px solid #e5e7eb; /* Cinza */
-  border-radius: 0.25rem; /* Arredondado */
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
   margin-bottom: 1rem;
+  font-size: 15px;
+  transition: all 0.2s ease;
 }
 
-.header {
-  width: 100%;
-  background-color: #e2e8f0; /* bg-gray-300 */
-  padding: 1rem; /* py-4 px-3 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
 }
 
-.header-title {
-  font-size: 1.875rem; /* text-2xl */
-  font-weight: 800; /* font-extrabold */
-  color: #1f2937; /* text-gray-900 */
-  text-decoration: none;
-}
-
-.header-title a {
-  color: inherit; /* Mantém a cor do texto */
-  text-decoration: none; /* Remove o sublinhado do link */
-}
-
-.header-title a:hover {
-  color: #2563eb; /* Azul para hover */
-}
-
+/* === MENSAGENS === */
 .error-message {
   padding: 0.5rem;
-  background-color: #f87171; /* Vermelho */
+  background-color: #ff5b5b;
   color: white;
   border-radius: 0.25rem;
   border: 1px solid #e5e7eb;
+  text-align: center;
+  font-weight: 500;
 }
 
-.topic-box {
-  width: 100%;
-  max-width: 600px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-}
-
-/* Estilização da tabela */
-
+/* === TABELA === */
 table {
-  width: 100%;
+  width: 90%;
+  margin: 40px auto 0 auto;
   border-collapse: collapse;
   background: #fff;
-  margin-top: 20px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* bordas mais suaves */
+  overflow: hidden;
 }
 
 thead tr {
-  background-color: #007bff;
+  background-color: #3b82f6;
   color: white;
 }
+
 td,
 th {
   padding: 12px;
   text-align: center;
   border: 1px solid #dee2e6;
+  font-size: 15px;
 }
 
 tbody tr:nth-child(odd) {
   background-color: #f8f8f8;
 }
 
-/* Linhas pares */
 tbody tr:nth-child(even) {
   background-color: #eff7fd;
 }
-/* Estilização dos botões */
 
-.back-button {
-  width: 96px; /* 96px */
-  padding: 0.5rem;
-  text-align: center;
+/* Cabeçalho azul estendido */
+table thead tr th,
+table thead tr td {
   background-color: #3b82f6;
   color: white;
-  border-radius: 0.25rem;
-  border: 1px solid #e5e7eb;
-  cursor: pointer;
+  border: 1px solid #dee2e6;
+  font-weight: 600;
 }
 
+thead th.action-column {
+  background-color: #3b82f6;
+  color: white;
+}
+/* === BOTÕES PADRONIZADOS === */
+
+/* Botão principal (submit) */
 .submit-button {
-  width: 96px;
-  padding: 10px;
-  text-align: center;
-  background-color: #10b981;
+  background-color: #2563eb;
   color: white;
-  border-radius: 0.25rem;
-  border: 1px solid #e5e7eb;
-  cursor: pointer;
-  display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
-  margin: 5px auto; /* Garante que o botão fique centralizado dentro do container */
+}
+.submit-button:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.03);
 }
 
-.delete-button {
-  width: 96px;
-  padding: 10px;
-  text-align: center;
-  background-color: #d41010;
+/* Botão editar */
+.edit-button__list {
+  background-color: #facc15;
+  color: #111;
+}
+.edit-button__list:hover {
+  background-color: #eab308;
+  transform: scale(1.03);
+}
+
+/* Botão deletar */
+.delete-button__list {
+  background-color: #dc2626;
   color: white;
-  border-radius: 5px;
-  border: 1px solid #e5e7eb;
+}
+.delete-button__list:hover {
+  background-color: #b91c1c;
+  transform: scale(1.03);
+}
+
+/* Botão voltar */
+.back-button {
+  background-color: #6b7280;
+  color: white;
+}
+.back-button:hover {
+  background-color: #4b5563;
+  transform: scale(1.03);
+}
+
+/* Botão logout */
+.logout-button {
+  background-color: #ef4444;
+  color: white;
+}
+.logout-button:hover {
+  background-color: #dc2626;
+  transform: scale(1.03);
+}
+
+/* Botão home PUT */
+.home-button__put {
+  background-color: #22c55e;
+  color: white;
+}
+.home-button__put:hover {
+  background-color: #16a34a;
+  transform: scale(1.03);
+}
+
+/* Botão home GET */
+.home-button__get {
+  background-color: #3b82f6;
+  color: white;
+}
+.home-button__get:hover {
+  background-color: #2563eb;
+  transform: scale(1.03);
+}
+
+/* Botão Fake API */
+.fakeapi-button__list {
+  background-color: #facc15;
+  margin: auto;
+  color: #111;
+}
+.fakeapi__list:hover {
+  background-color: #eab308;
+  transform: scale(1.03);
+}
+
+/* === POSIÇÃO FIXA DOS BOTÕES SUPERIORES === */
+.back-button,
+.logout-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  margin: 0;
+  display: inline-block;
+  z-index: 999;
+}
+
+/* === CONTAINER (opcional, caso queira agrupar) === */
+.top-buttons {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.edit-button__list,
+.delete-button__list,
+.submit-button__list,
+.upload-button__list,
+.generate-button__list {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
   cursor: pointer;
-  margin-right: 8px;
-  display: block;
-  margin: 1px auto;
+  transition: all 0.25s ease-in-out;
+  margin: 5px;
+}
+
+/* Estilo individual (mantém cores e hover) */
+.edit-button__list {
+  background-color: #facc15;
+  color: #111;
+}
+.edit-button__list:hover {
+  background-color: #eab308;
+  transform: scale(1.03);
 }
 
 .delete-button__list {
-  width: 96px;
-  padding: 10px;
-  text-align: center;
-  background-color: #ff0000;
+  background-color: #dc2626;
   color: white;
-  border-radius: 5px;
-  border: 1px solid #e5e7eb;
-  cursor: pointer;
-  margin-right: 8px;
-  display: block;
-  margin: 1px auto;
+}
+.delete-button__list:hover {
+  background-color: #b91c1c;
+  transform: scale(1.03);
 }
 
-.edit-button__list {
-  width: 96px;
-  padding: 10px;
-  text-align: center;
-  background-color: #ffd900;
+.submit-button__list {
+  background-color: #22c55e;
+  width: 00px;
   color: white;
-  border-radius: 5px;
-  border: 1px solid #e5e7eb;
-  cursor: pointer;
-  margin-right: 8px;
-  display: block;
-  margin: 1px auto;
+}
+.submit-button__list:hover {
+  background-color: #16a34a;
+  transform: scale(1.03);
 }
 
-.home-button__put {
-  width: 200px;
-  padding: 0.5rem;
-  text-align: center;
-  background-color: #10b981;
-  color: white;
-  border-radius: 0.25rem;
-  border: 1px solid #e5e7eb;
-  cursor: pointer;
-  display: block; /* Torna o botão um elemento de bloco */
-  margin: 1px auto; /* Centraliza o botão horizontalmente */
+.upload-button__list {
+  background-color: #f3f4f6;
+  width: 170px;
+  border: 1px solid #d1d5db;
+}
+.upload-button__list:hover {
+  background-color: #e5e7eb;
+  transform: scale(1.03);
 }
 
-.home-button__get {
-  width: 200px;
-  padding: 0.5rem;
-  text-align: center;
-  background-color: #029765;
-  color: white;
-  border-radius: 0.25rem;
-  border: 1px solid #e5e7eb;
-  cursor: pointer;
-  display: block; /* Torna o botão um elemento de bloco */
-  margin: 1px auto; /* Centraliza o botão horizontalmente */
+.generate-button__list {
+  background-color: #22c55e;
+  width: 210px;
+  border: 1px solid #d1d5db;
+}
+.generate-button__list:hover {
+  background-color: #16a34a;
+  transform: scale(1.03);
 }
 
+/* === Botão de Geração/Criação (Ex: Generate Prescription) === */
+.generate-button {
+  background-color: #22c55e;
+  color: white;
+}
+.generate-button:hover {
+  background-color: #16a34a;
+  transform: scale(1.03);
+}
+
+/* === Botão Upload (Ação Secundária) === */
 .upload-button {
-  width: 90%;
-  padding: 0.5rem;
-  text-align: center;
-  background-color: #10b981;
-  color: white;
-  border-radius: 0.25rem;
-  border: 1px solid #e5e7eb;
-  cursor: pointer;
-  display: block;
-  margin: 10px auto;
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+}
+.upload-button:hover {
+  background-color: #e5e7eb;
+  transform: scale(1.03);
 }
 
-.form-button:hover {
-  background-color: #16a34a; /* Verde escuro */
-}
-
-span {
+/* Estilização do input file */
+.file-input {
+  display: inline-block;
+  padding: 10px 15px;
+  border: 2px dashed #2563eb; /* cor do contorno */
+  border-radius: 10px;
+  background-color: #f0f4ff;
+  color: #2563eb;
+  font-weight: 600;
   font-size: 14px;
-  color: #1f2937; /* Gray-800 */
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  text-align: center;
+  width: 180px; /* ajuste conforme necessidade */
+}
+
+.file-input:hover {
+  background-color: #e0eaff;
+  border-color: #1d4ed8;
+  transform: scale(1.03);
+}
+
+/* Remove o estilo padrão do input */
+.file-input input[type="file"] {
+  display: none;
 }
