@@ -12,7 +12,7 @@ JavaScript / TypeScript — linguagem principal
 
 Vite — build e servidor de desenvolvimento rápido
 
-CSS / Tailwind / Styled Components (ajuste conforme seu projeto)
+CSS - estilização
 
 Node.js & NPM — ambiente de execução e gerenciamento de pacotes
 
