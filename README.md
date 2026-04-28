@@ -1,54 +1,141 @@
 # 🏥 Projeto Consultório Médico
 
-Um sistema em desenvolvimento para gerenciamento de consultórios médicos, desenvolvido em React.js, com foco em usabilidade, agilidade e organização de dados clínicos.
+Sistema web para gerenciamento de consultórios médicos, desenvolvido com foco em organização, produtividade e controle de dados clínicos.
 
-Este projeto é voltado para fins de estudo e aprimoramento contínuo, servindo como base para praticar e testar novas tecnologias e boas práticas de desenvolvimento.
+O projeto segue uma arquitetura moderna separando **frontend** e **backend**, permitindo maior escalabilidade e manutenção.
+
+---
 
 # 🚀 Tecnologias Utilizadas
 
-React.js — interface interativa e modular
+## 🔵 Frontend
 
-JavaScript / TypeScript — linguagem principal
+* React.js — construção da interface
+* Next.js — framework para aplicações modernas
+* JavaScript — linguagem principal
+* CSS — estilização
 
-Vite — build e servidor de desenvolvimento rápido
+## 🟢 Backend
 
-CSS - estilização
+* Node.js — ambiente de execução
+* Express.js — criação de API REST
+* MongoDB — banco de dados
+* Mongoose — modelagem dos dados
 
-Node.js & NPM — ambiente de execução e gerenciamento de pacotes
+---
 
-# Funcionalidades Previstas
+# 📂 Estrutura do Projeto
 
-• Cadastro de pacientes e médicos
+```
+MediApp/
+├── backend/   → API e regras de negócio
+└── frontend/  → Interface do usuário
+```
 
-• Agendamento e gerenciamento de consultas
+---
 
-• Controle de prontuários e histórico clínico
+# ⚙️ Funcionalidades
 
-• Login e autenticação de usuários
+* Cadastro de médicos
+* Cadastro de pacientes
+* Login e autenticação
+* Gerenciamento de consultas
+* Estrutura para prontuário médico
+
+---
 
 # 🏗️ Como Executar o Projeto
 
-Antes de começar, certifique-se de ter o Node.js (versão 18 ou superior) e o npm instalados.
+## 🔧 Pré-requisitos
 
-1 - Clone o repositório
-git clone https://github.com/MateusNatal/ProjetoConsultorioMedico.git
-cd ProjetoConsultorioMedico
+Antes de começar, você precisa ter instalado:
 
-2 - Entre na pasta src, acesse o arquivo index e execute o script:
+* Node.js (versão 18 ou superior)
+* MongoDB rodando localmente
 
+---
+
+## 🟢 1. Clone o repositório
+
+```bash
+git clone https://github.com/MateusNatal/projeto-consultorio-medico
+cd projeto-consultorio-medico/MediApp
+```
+
+---
+
+## 🗄️ 2. Iniciar o MongoDB
+
+Certifique-se de que o serviço do MongoDB está rodando no seu sistema.
+
+---
+
+## 🟢 3. Rodar o Backend
+
+```bash
+cd backend
+npm install
 node index.js
+```
 
-💡 Essa ação é equivalente a usar o atalho Ctrl + Alt + N no VS Code (via extensão Code Runner).
+Servidor rodando em:
 
-3 - Inicie o ambiente principal (MediApp)
-Depois que o app base estiver em execução, volte um diretório e acesse a pasta medi-app:
+```
+http://localhost:3001
+```
 
-cd ../medi-app
+---
+
+## 🔵 4. Rodar o Frontend
+
+Abra outro terminal:
+
+```bash
+cd frontend
 npm install
 npm run dev
+```
 
-4 - Acesse no navegador
+---
 
-Após iniciar o servidor, abra o navegador e acesse:
+## 🌐 5. Acessar no navegador
 
+```
 http://localhost:3000
+```
+
+---
+
+# 🧪 Testes de API
+
+Você pode testar os endpoints utilizando ferramentas como:
+
+* Postman
+* Thunder Client (VS Code)
+
+---
+
+# 💡 Observações
+
+* O projeto utiliza MongoDB local para desenvolvimento
+* Estrutura preparada para futura migração para banco em nuvem
+* Código em constante evolução para fins acadêmicos e práticos
+
+---
+
+# 📌 Objetivo
+
+Este projeto foi desenvolvido como prática para:
+
+* Arquitetura Full Stack
+* Integração entre frontend e backend
+* Boas práticas de desenvolvimento
+* Preparação para projetos reais e mercado
+
+---
+
+# 👨‍💻 Autor
+
+Mateus Natal
+Estudante de Análise e Desenvolvimento de Sistemas
+Desenvolvedor em formação focado em Web e Design

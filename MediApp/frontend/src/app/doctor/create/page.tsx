@@ -64,6 +64,7 @@ export default function DoctorCreate() {
       </Link>
       <form className="form-container" onSubmit={addDoctor}>
         <h1 className="form-header">DOCTOR CREATION FORM</h1>
+        <div className="topic-box">
         <div>
           <label>Name</label>
           <input
@@ -120,6 +121,7 @@ export default function DoctorCreate() {
             className="form-input"
             onChange={(e: any) => setPhone(e.target.value)}
           />
+        </div>
         </div>
         <div>
           <button className="submit-button">Submit</button>

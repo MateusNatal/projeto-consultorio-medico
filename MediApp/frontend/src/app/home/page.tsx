@@ -10,7 +10,7 @@ export default function Home() {
         <button className="logout-button">Logout</button>
       </Link>
       <div className="form-container">
-        <h1 className="form-header"> HOME </h1>
+        <h1 className="form-header"> MEDI APP </h1>
         <br></br>
         <div className="topic-box">
           <h1 className="form-text">Doctors</h1>

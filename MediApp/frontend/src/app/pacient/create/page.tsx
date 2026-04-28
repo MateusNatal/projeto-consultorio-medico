@@ -51,6 +51,7 @@ export default function PacientCreate() {
 
       <form className="form-container" onSubmit={addPacient}>
         <h1 className="form-header">FORM CREATE NEW PACIENT</h1>
+        <div className="topic-box">
         <div>
           <label>Name</label>
           <input
@@ -86,6 +87,7 @@ export default function PacientCreate() {
             className="form-input"
             onChange={(e: any) => setPhone(e.target.value)}
           />
+        </div>
         </div>
         <div>
           <button className="submit-button">Submit</button>

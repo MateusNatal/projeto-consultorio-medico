@@ -37,6 +37,7 @@ export default function Home() {
     <div>
       <form className="form-container" onSubmit={authentication}>
         <h1 className="form-header">LOGIN</h1>
+        <div className="topic-box">
         <div>
           <label htmlFor="">Usuário</label>
           <input
@@ -47,7 +48,7 @@ export default function Home() {
           />
         </div>
         <div>
-          <label htmlFor="" className="text-sm font-bold py-2 block">
+          <label htmlFor="">
             Senha
           </label>
           <input
@@ -56,6 +57,7 @@ export default function Home() {
             className="form-input"
             onChange={(e: any) => setPassword(e.target.value)}
           />
+        </div>
         </div>
         <div>
           <button className="submit-button">Entrar</button>

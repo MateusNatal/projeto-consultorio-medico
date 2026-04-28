@@ -74,6 +74,7 @@ export default function PrescriptionCreate(params: any) {
       </Link>
       <form className="form-container" onSubmit={addPrescription}>
         <h1 className="form-header">PRESCRIPTION CREATION FORM</h1>
+        <div className="topic-box">
         <div>
           <label>Prescription date</label>
           <input
@@ -110,6 +111,7 @@ export default function PrescriptionCreate(params: any) {
             value={instructions}
             onChange={(e: any) => setInstructions(e.target.value)}
           />
+        </div>
         </div>
         <div>
           <button type="submit" className="submit-button">

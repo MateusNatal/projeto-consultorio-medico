@@ -78,7 +78,8 @@ export default function AppointmentCreate() {
         <button className="back-button">Back</button>
       </Link>
       <form className="form-container" onSubmit={addAppointment}>
-        <h1 className="form-header">Medical Appointment Creation Form</h1>
+        <h1 className="form-header">APPOINTMENT CREATION FORM</h1>
+        <div className="topic-box">
         <div>
           <label>Date</label>
           <input
@@ -128,6 +129,7 @@ export default function AppointmentCreate() {
               {error}
             </div>
           )}
+        </div>
         </div>
       </form>
     </>
